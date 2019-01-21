@@ -17,7 +17,7 @@ stages:
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: https://registry.makina-corpus.net/
+      registry: registry.makina-corpus.net
 - name: Deploy
   steps:
   - applyYamlConfig:

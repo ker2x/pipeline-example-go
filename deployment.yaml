@@ -27,8 +27,6 @@ spec:
       labels:
         app: helloserver
     spec:
-      imagePullSecrets:
-      - name: lla-portus-token
       containers:
       - name: helloserver
         image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}

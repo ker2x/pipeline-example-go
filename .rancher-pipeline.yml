@@ -16,7 +16,8 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
-      registry: registry.makina-corpus.net/rancher
+      pushRemote: true
+      registry: 127.0.0.1:34463
 - name: Deploy
   steps:
   - applyYamlConfig:

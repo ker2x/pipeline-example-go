@@ -9,15 +9,12 @@ stages:
         cd /go/src/github.com/rancher/pipeline-example-go
         go build -o bin/hello-server
         go test -cover
-        ls
 - name: Publish
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: 127.0.0.1:34463
 - name: Deploy
   steps:
   - applyYamlConfig:

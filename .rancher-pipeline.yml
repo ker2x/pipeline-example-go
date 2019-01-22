@@ -9,7 +9,6 @@ stages:
         cd /go/src/github.com/rancher/pipeline-example-go
         go build -o bin/hello-server
         go test -cover
-        ls
 - name: Publish
   steps:
   - publishImageConfig:
@@ -17,7 +16,7 @@ stages:
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: registry.makina-corpus.net/lla
+      registry: registry.makina-corpus.net/rancher
 - name: Deploy
   steps:
   - applyYamlConfig:
